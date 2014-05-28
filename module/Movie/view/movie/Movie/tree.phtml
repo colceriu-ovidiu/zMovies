@@ -1,0 +1,22 @@
+<?php
+
+ $title = 'All Movies By Category';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+
+<ul>
+     <?php foreach ($res as $cat) : ?>
+    <li>
+        <?=$cat['title'];?>
+        <ul>
+            <?php foreach ($cat['res'] as $mov) : ?>
+            <li>
+                <?=$mov['title'];?>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </li>
+    <?php endforeach; ?>
+</ul>

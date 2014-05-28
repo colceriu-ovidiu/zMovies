@@ -1,0 +1,31 @@
+<?php
+
+$title = 'User Login';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+
+// display flash messeges
+if ($this->messages){
+    echo '<ul>';
+    foreach($this->messages as $message)
+    {
+        echo '<li>'.$message.'</li>';
+    }
+    echo '</ul>';
+}
+?>
+
+<?php
+if ($loggedin) {
+?><div>you are allready loggin as <b><?php echo $username ?></b>. </div><?php
+} else { 
+    $form->prepare();
+    
+    echo $this->form()->openTag($form);
+    echo $this->formCollection($form);
+    echo $this->form()->closeTag();
+}
+?>
+

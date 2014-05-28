@@ -1,0 +1,28 @@
+<?php
+
+ $title = 'Movie Categories';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ 
+ <table class="table">
+ <?php foreach ($res as $item) : ?>
+ <tr>
+     <td>
+        <a href="<?php echo $this->url('movie', array('action'=>'index', 'id' => $item['id']));?>" >
+            <?php echo $this->escapeHtml($item['title']);?>
+        </a>
+    </td>
+ </tr>
+ <?php endforeach; ?>
+  <tr>
+   <td colspan="2" >
+    <a href="<?php echo $this->url('movie', array('action'=>'index'));?>">&raquo; View all</a>
+   </td>
+  <tr>
+  <tr>
+   <td colspan="2" >
+    <a href="<?php echo $this->url('movie', array('action'=>'tree'));?>">&raquo; View all (tree)</a>
+   </td>    
+  </tr>
+ </table>
